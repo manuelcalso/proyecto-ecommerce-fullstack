@@ -7,7 +7,7 @@ import girlman from "./../assets/products/girlman.webp";
 import jaguar from "./../assets/products/jaguar.webp";
 import pattern from "./../assets/products/pattern.webp";
 
-import video4 from "./../assets/videos/pexels.mp4";
+import video4 from "./../assets/videos/pexels2.mp4";
 /*
   This example requires some changes to your config:
   
@@ -116,10 +116,10 @@ export default function Catalog() {
         <h2 className="sr-only">Products</h2>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 font-brodies">
           {products.map((product) => (
-            <a
+            <div
               key={product.id}
               href={product.href}
-              className="group border border-white rounded bg-black relative z-10"
+              className="group rounded bg-black relative z-10"
             >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <img
@@ -130,10 +130,15 @@ export default function Catalog() {
               </div>
               <h3 className="mt-4 text-lg text-white">{product.name}</h3>
               <p className="text-sm text-gray-500">{product.description}</p>
-              <p className="mt-1 text-lg font-medium text-white">
-                {product.price}
-              </p>
-            </a>
+              <div className="flex justify-around items-center">
+                <p className="mt-1 text-lg font-medium text-white">
+                  {product.price}
+                </p>
+                <button className="rounded bg-purple-900 py-2 my-2 hover:bg-red-500">
+                  Add to cart
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </div>

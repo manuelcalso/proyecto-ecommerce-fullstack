@@ -53,7 +53,7 @@ export default function Herosection(props) {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-lg leading-6 text-white vibrate">
+            <a href="/login" className="text-lg leading-6 text-white vibrate">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -139,7 +139,7 @@ export default function Herosection(props) {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="/products"
                 className="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
               >
                 Get started

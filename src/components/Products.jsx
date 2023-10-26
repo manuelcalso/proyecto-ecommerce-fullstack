@@ -15,7 +15,6 @@ const products = [
       "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
-    color: "Black",
   },
   {
     id: 2,
@@ -24,9 +23,8 @@ const products = [
     imageSrc: lilacalavera,
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$40",
-    color: "Violet",
-    description:
-      "Lila t-shirt painting with a skull and flowers by Herman Henstenburgh.",
+
+    description: "Lila t-shirt painting with a skull and flowers.",
   },
   {
     id: 3,
@@ -35,7 +33,7 @@ const products = [
     imageSrc: berserkerimg,
     imageAlt: "Unisex T-shirt with Anime Print.",
     price: "$40",
-    color: "Black",
+
     description: "Unisex T-shirt with Anime Print.",
   },
   {
@@ -45,7 +43,7 @@ const products = [
     imageSrc: lachilanga,
     imageAlt: "Unisex T-shirt with Anime Print.",
     price: "$40",
-    color: "Blue",
+
     description: "The chilanga",
   },
   {
@@ -55,7 +53,7 @@ const products = [
     imageSrc: vintageskull,
     imageAlt: "Unisex T-shirt with Anime Print.",
     price: "$35",
-    color: "White",
+
     description: "Vintage Men's Cotton T-shirt with Skulls and Flowers",
   },
   {
@@ -65,7 +63,7 @@ const products = [
     imageSrc: redeyestee,
     imageAlt: "Red Eyes Tee",
     price: "$35",
-    color: "Black",
+
     description: "Red Eye Pupil T-shirt",
   },
   {
@@ -75,7 +73,7 @@ const products = [
     imageSrc: purplecat,
     imageAlt: "Purple Cat Tee",
     price: "$35",
-    color: "Black",
+
     description: "Comfortable T-shirt With 3-Eyed Cat Print",
   },
   {
@@ -85,7 +83,7 @@ const products = [
     imageSrc: radiohead,
     imageAlt: "Radiohead Tee",
     price: "$35",
-    color: "Black",
+
     description: "Rock Band Radio Head Digital Print Short-Sleeved T-Shirt",
   },
 
@@ -103,7 +101,7 @@ export default function Products() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="group relative border border-white bg-black rounded"
+              className="group relative bg-black rounded flex-col"
             >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <img
@@ -112,7 +110,7 @@ export default function Products() {
                   className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                 />
               </div>
-              <p className="inline-flex flex-row justify-center items-center gap-2 rounded bg-black text-yellow-500 font-brodies">
+              <p className="flex flex-row justify-center items-center gap-2 bg-black text-yellow-500 font-brodies  py-1">
                 Brand New!
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,9 +132,9 @@ export default function Products() {
                   />
                 </svg>
               </p>
-              <div className="mt-4 flex justify-between">
+              <div className=" flex flex-row  justify-around  h-fit">
                 <div>
-                  <h3 className="text-m text-white">
+                  <h3 className="text-m text-white flex-row py-8 px-0 ">
                     <a href={product.href}>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
@@ -144,11 +142,13 @@ export default function Products() {
                     <br />
                     <p>{product.description}</p>
                   </h3>
-                  <p className="mt-1 text-m text-white">{product.color}</p>
                 </div>
-                <p className="text-2xl font-medium text-white ">
-                  {product.price}
-                </p>
+                <div className="flex flex-col justify-center items-center px-5">
+                  <p className="text-2xl font-medium py-2 ">{product.price}</p>
+                  <button className=" rounded py-2 px-2 h-16 w-20 text-m bold text-white bg-purple-900 ">
+                    Add to cart
+                  </button>
+                </div>
               </div>
             </div>
           ))}

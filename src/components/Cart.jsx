@@ -1,6 +1,8 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import purplecat from "./../assets/products/gatomorado.webp";
+import radiohead from "./../assets/products/radiohead.webp";
 
 const products = [
   {
@@ -10,8 +12,7 @@ const products = [
     color: "Salmon",
     price: "$90.00",
     quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
+    imageSrc: purplecat,
     imageAlt:
       "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
   },
@@ -22,8 +23,7 @@ const products = [
     color: "Blue",
     price: "$32.00",
     quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+    imageSrc: radiohead,
     imageAlt:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
