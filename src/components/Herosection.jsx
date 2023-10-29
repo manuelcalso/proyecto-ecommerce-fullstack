@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import video2 from "./../assets/videos/pexels.mp4";
+import video2 from "./../assets/videos/pbia.mp4";
 
 const navigation = [
   { name: "Products", href: "/products" },
