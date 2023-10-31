@@ -10,6 +10,7 @@ import Herosection from "./components/Herosection";
 import Newsletter from "./components/Newsletter";
 import Products from "./components/Products";
 import Footer from "./components/Footer";
+import Banner from "./components/Banner";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <div>
         <Herosection imagenlogo={plasticlogo} />
       </div>
-      <div></div>
+      <div>
+        <Banner />
+      </div>
       <div>
         <Products />
       </div>
