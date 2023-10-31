@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import video2 from "./../assets/videos/pbia.mp4";
+import video2 from "./../assets/videos/dj.mp4";
 
 const navigation = [
   { name: "Products", href: "/products" },
@@ -23,7 +23,7 @@ export default function Herosection(props) {
         >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Plastic Beach</span>
               <img
                 className=" imagenlogo h-24 w-24 rounded-full bg-white"
                 src={props.imagenlogo}
@@ -95,7 +95,7 @@ export default function Herosection(props) {
                 </div>
                 <div className="py-6">
                   <a
-                    href="#"
+                    href="/login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Log in
@@ -128,14 +128,13 @@ export default function Herosection(props) {
               Plastic Beach
             </div>
             <p className="text-xl leading-8 text-gray-400 font-bellerose italic tracking-widest">
-              Streetwear...
+              Streetwear
             </p>
             <p className="mt-6 text-2xl leading-8 text-[#ffffff] font-bellerose">
               Welcome to the world of Plastic Beach where music and fashion
               collide in a harmony of creativity. Our collection of unique,
-              artistically inspired T-shirts is more than just apparel; it's a
-              statement. With each design, we pay homage to the iconic sounds
-              and visuals...
+              artistically inspired T-shirts is more than just apparel. With
+              each design, we pay homage to the iconic sounds and visuals.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
