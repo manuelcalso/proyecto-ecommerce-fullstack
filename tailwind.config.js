@@ -9,5 +9,5 @@ export default {
     extend: {},
   },
   darkMode: "class",
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require("tw-elements/dist/plugin.cjs"), "@tailwindcss/forms"],
 };

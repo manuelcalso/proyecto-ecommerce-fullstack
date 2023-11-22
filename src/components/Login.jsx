@@ -1,13 +1,17 @@
-import negociologo from "./../assets/logos/nulogo3.png";
 import profileimg from "./../assets/marco.png";
 
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Login(props) {
+export default function Login() {
   return (
     <>
-      <Header imagennegocio={negociologo} imagenprofile={profileimg} />
+      <Header
+        imagennegocio={
+          "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+        }
+        imagenprofile={profileimg}
+      />
       {/*
           This example requires updating your template:
   
@@ -21,7 +25,9 @@ export default function Login(props) {
           <a href="/">
             <img
               className=" mx-auto h-28 w-auto"
-              src={negociologo}
+              src={
+                "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+              }
               alt="Your Company"
             />
           </a>
@@ -46,7 +52,7 @@ export default function Login(props) {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -75,7 +81,7 @@ export default function Login(props) {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -91,7 +97,11 @@ export default function Login(props) {
           </form>
         </div>
       </div>
-      <Footer imagenlogo={negociologo} />
+      <Footer
+        imagenlogo={
+          "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+        }
+      />
     </>
   );
 }

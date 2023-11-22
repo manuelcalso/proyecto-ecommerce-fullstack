@@ -20,7 +20,7 @@ const products = [
     id: 1,
     name: "Summer Skull",
     href: "#",
-    price: "$48",
+    price: "$ 18",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587968/products%20ecommerce/calaveraverano_gm0phm.webp",
     imageAlt: "Summer Skull",
@@ -30,7 +30,7 @@ const products = [
     id: 2,
     name: "Fiery Sunflower",
     href: "#",
-    price: "$35",
+    price: "$ 15",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587963/products%20ecommerce/girasolardiente_hai9pa.webp",
     imageAlt: "Fiery Sunflower",
@@ -40,7 +40,7 @@ const products = [
     id: 3,
     name: "MTV tee",
     href: "#",
-    price: "$89",
+    price: "$ 19",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587964/products%20ecommerce/mtv_yy0dbg.webp",
     imageAlt: "MTV tee",
@@ -50,7 +50,7 @@ const products = [
     id: 4,
     name: "Green Astronaut",
     href: "#",
-    price: "$35",
+    price: "$ 15",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587964/products%20ecommerce/greenastronaut_s7hhzh.webp",
     imageAlt: "Green Astronaut",
@@ -60,7 +60,7 @@ const products = [
     id: 5,
     name: "Mona Lisa",
     href: "#",
-    price: "$35",
+    price: "$ 15",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587963/products%20ecommerce/monalisa_f540xt.webp",
     imageAlt: "Mona Lisa",
@@ -70,7 +70,7 @@ const products = [
     id: 6,
     name: "Gilman Brewing",
     href: "#",
-    price: "$35",
+    price: "$ 15",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587963/products%20ecommerce/girlman_i0dcup.webp",
     imageAlt: "Gilman Brewing",
@@ -80,7 +80,7 @@ const products = [
     id: 7,
     name: "Pattern Tee",
     href: "#",
-    price: "$35",
+    price: "$ 5",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587964/products%20ecommerce/pattern_y76tlp.webp",
     imageAlt: "Pattern Tee",
@@ -91,7 +91,7 @@ const products = [
     id: 8,
     name: "Leopard Tee",
     href: "#",
-    price: "$35",
+    price: "$ 10",
     imageSrc:
       "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700587963/products%20ecommerce/jaguar_cjgzgt.webp",
     imageAlt: "Leopard Tee",
@@ -111,7 +111,6 @@ export default function Catalog() {
         playbackRate={0.5}
       >
         <source src={video4} type="video/mp4" />
-        Tu navegador no admite la reproducción de videos.
       </video>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
         <h2 className="sr-only">Products</h2>

@@ -6,7 +6,7 @@ import Cart from "./Cart.jsx";
 const navigation = [
   { name: "Products", href: "/products", current: true },
   { name: "Home", href: "/", current: false },
-  { name: "Features", href: "#", current: false },
+  { name: "Registration", href: "/registration" },
   { name: "Company", href: "#", current: false },
 ];
 
