@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import video2 from "./../assets/videos/smoke.mp4";
-
 const navigation = [
   { name: "Products", href: "/products" },
-  { name: "Features", href: "/features" },
+  { name: "Features", href: "#" },
   { name: "Marketplace", href: "#" },
   { name: "Company", href: "#" },
 ];
@@ -109,7 +107,12 @@ export default function Herosection(props) {
       <div className="relative isolate px-6 pt-2 lg:px-8">
         <div className="video-background">
           <video autoPlay muted loop className="video">
-            <source src={video2} type="video/mp4" />
+            <source
+              src={
+                "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674480/videos/403670244_6898248946909846_5336635842586376788_n_p5y70b.mp4"
+              }
+              type="video/mp4"
+            />
           </video>
           <div />
         </div>

@@ -1,11 +1,8 @@
 import "./index.css";
-import negociologo from "./../src/assets/gorillazlogo.png";
-import profileimg from "./../src/assets/marco.png";
 import plasticlogo from "./../src/assets/logos/nulogo3.png";
 
 //<Header imagenlogo={negociologo} imagenprofile={profileimg} />
 
-import Header from "./components/Header";
 import Herosection from "./components/Herosection";
 import Newsletter from "./components/Newsletter";
 import Products from "./components/Products";
@@ -16,7 +13,11 @@ function App() {
   return (
     <>
       <div>
-        <Herosection imagenlogo={plasticlogo} />
+        <Herosection
+          imagenlogo={
+            "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+          }
+        />
       </div>
       <div>
         <Banner />
@@ -28,7 +29,11 @@ function App() {
         <Newsletter />
       </div>
       <div>
-        <Footer imagenlogo={plasticlogo} />
+        <Footer
+          imagenlogo={
+            "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+          }
+        />
       </div>
     </>
   );
