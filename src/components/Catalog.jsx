@@ -1,20 +1,5 @@
 import Productcard from "./Productcard";
 
-import video4 from "./../assets/videos/pexels2.mp4";
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 const products = [
   {
     id: 1,
@@ -110,7 +95,12 @@ export default function Catalog() {
         className="absolute inset-0 w-full h-full object-cover z-0"
         playbackRate={0.5}
       >
-        <source src={video4} type="video/mp4" />
+        <source
+          src={
+            "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674388/videos/pexels_d05v8s.mp4"
+          }
+          type="video/mp4"
+        />
       </video>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
         <h2 className="sr-only">Products</h2>

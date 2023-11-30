@@ -1,49 +1,12 @@
+// ./src/main.jsx
+
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import Cart from "./components/Cart.jsx";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage.jsx";
-import Mainproducts from "./components/Mainproducts.jsx";
-import Login from "./components/Login.jsx";
-import Registration from "./components/Registration.jsx";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/products",
-    element: <Mainproducts />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/registration",
-    element: <Registration />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/marketplace",
-    element: "",
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/company",
-    element: "",
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-    errorElement: <ErrorPage />,
-  },
-]);
+import Router from "./Router.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Router />
   </React.StrictMode>
 );

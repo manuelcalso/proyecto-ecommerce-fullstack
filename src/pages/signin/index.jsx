@@ -1,7 +1,7 @@
-import profileimg from "./../assets/marco.png";
+import profileimg from "../../assets/marco.png";
 
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function Login() {
   return (

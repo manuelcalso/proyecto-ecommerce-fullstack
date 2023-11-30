@@ -1,10 +1,10 @@
-import "./../index.css";
-import React from "react";
-import Header from "./Header";
-import Catalog from "./Catalog";
-import Footer from "./Footer";
+import "./../../../src/index.css";
 
-import profileimg from "./../assets/marco.png";
+import Header from "./../../components/Header";
+import Catalog from "./../../components/Catalog";
+import Footer from "../../components/Footer";
+
+import profileimg from "../../assets/marco.png";
 
 export default function Mainproducts() {
   return (

@@ -1,5 +1,4 @@
 import "./index.css";
-import plasticlogo from "./../src/assets/logos/nulogo3.png";
 
 //<Header imagenlogo={negociologo} imagenprofile={profileimg} />
 
@@ -9,7 +8,7 @@ import Products from "./components/Products";
 import Footer from "./components/Footer";
 import Banner from "./components/Banner";
 
-function App() {
+function Home() {
   return (
     <>
       <div>
@@ -39,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
