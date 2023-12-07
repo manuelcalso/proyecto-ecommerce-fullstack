@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import ProductContext from "./ProductContext";
 import ProductReducer from "./ProductReducer";
 import axios from "axios";
+import axiosClient from "../../config/axios";
 
 const ProductState = (props) => {
   //valor inicial
@@ -26,7 +27,7 @@ const ProductState = (props) => {
   const getProducts = async () => {
     try {
       console.log("entrando a getProducts");
-      const res = await axios.get("http://localhost:3005/api/v1/products/");
+      const res = await axiosClient.get("/api/v1/products/");
       const {
         data: { data: dataProducts },
       } = res;
@@ -46,9 +47,7 @@ const ProductState = (props) => {
   const getProduct = async (slug) => {
     console.log("entrando a getProduct");
     try {
-      const res = await axios.get(
-        `http://localhost:3005/api/v1/products/readone/${slug}`
-      );
+      const res = await axiosClient.get(`/api/v1/products/readone/${slug}`);
 
       const {
         data: { data: dataProduct },
