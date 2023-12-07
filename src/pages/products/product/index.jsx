@@ -30,81 +30,77 @@ function ProductPage() {
     <>
       <Header />
 
-      <div className="flex justify-evenly items-center italic font-brodies">
-        <div className="video-background">
+      <div className="flex flex-col md:flex-row lg:flex-col justify-evenly items-center italic">
+        <div className="md:w-1/2 lg:w-full video-background">
           <video autoPlay muted loop className="video">
             <source
-              src={
-                "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674383/videos/pexels2_hmshhg.mp4"
-              }
+              src="https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674383/videos/pexels2_hmshhg.mp4"
               type="video/mp4"
             />
           </video>
           <div />
         </div>
-        <div className="flex flex-col jusify-center items-center gap-y-2 bg-black rounded py-5">
+        <div className="flex flex-col justify-center items-center gap-y-2 bg-black rounded py-5">
           <img
             src={img[0]}
             className="border border-white h-82 w-80 rounded"
-          ></img>
+            alt={name}
+          />
           <h1>{name}</h1>
           <p>{description}</p>
         </div>
-        <ul className="flex flex-col gap-y-2 ">
+        <ul className="flex flex-col gap-y-2 md:w-1/2 lg:w-full">
           {prices.length !== 0 ? (
             <>
               {prices.map((element) => {
-                console.log(element);
                 const { price, size } = element;
-                //console.log(price);
-                //console.log(size);
 
                 return (
-                  <>
-                    <li className="text-3xl border border-black py-2 px-8 bg-product rounded">
-                      <h2>Size : {size}</h2>
-                      <br />
-                      <p>
-                        Price: {priceFormatter(price)} {currency}{" "}
-                      </p>
-                      {authStatus ? (
-                        <>
-                          <select className="rounded py-2 px-2 bg-green-500 shadow-text text-black">
-                            {quantityOptions.map((element) => {
-                              return (
-                                <>
-                                  <option value={element}>{element}</option>
-                                </>
-                              );
-                            })}
-                          </select>
-
-                          <button
-                            className="border border-black rounded px-5 bg-green-500 text-black text-2xl py-2 .bg-product shadow-text"
-                            onClick={() => setCartOpen(!cartOpen)}
-                          >
-                            Add to Cart
-                            {cartOpen && <Cart />}
-                          </button>
-                        </>
-                      ) : (
+                  <li
+                    key={size}
+                    className="text-xl border border-black py-2 px-8 bg-product rounded flex flex-col md:flex-row lg:flex-col justify-center items-center gap-x-5 "
+                  >
+                    <h2 className="font-brodies">Size : {size}</h2>
+                    <p className="font-brodies">
+                      Price: {priceFormatter(price)} {currency}{" "}
+                    </p>
+                    {authStatus ? (
+                      <>
+                        <select className="rounded bg-green-500 shadow-text text-black">
+                          {quantityOptions.map((option) => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          className="border border-black rounded px-5 bg-green-500 text-black text-xl py-2 .bg-product shadow-text font-brodies mt-2 md:mt-0 lg:mt-2"
+                          onClick={() => setCartOpen(!cartOpen)}
+                        >
+                          Add to Cart
+                          {cartOpen && <Cart />}
+                        </button>
+                      </>
+                    ) : (
+                      <>
                         <Link
                           to="/login"
-                          className="flex flex-col border border-white rounded py-2 px-2 bg-green-500 shadow-text text-black"
+                          className="flex flex-col border border-white rounded py-2 px-2 bg-green-500 shadow-text text-black justify-center items-center font-brodies mt-2 md:mt-0 lg:mt-2"
                         >
                           Create your cart
                         </Link>
-                      )}
-                    </li>
-                  </>
+                      </>
+                    )}
+                  </li>
                 );
               })}
             </>
           ) : (
-            "No hay producto disponibles"
+            <li>No hay producto disponibles</li>
           )}
         </ul>
       </div>
+
       <Footer />
     </>
   );

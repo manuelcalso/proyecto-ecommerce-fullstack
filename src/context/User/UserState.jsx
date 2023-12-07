@@ -29,11 +29,12 @@ const UserState = (props) => {
 
   // A. REGISTRO DE USUARIO
   const registerUser = async (form) => {
-    console.log(form);
+    console.log("form", form);
     try {
       const res = await axiosClient.post("/api/v1/users/create", form);
-      console.log(res);
+      console.log("res", res);
       const token = res.data.data;
+      console.log("token", token);
 
       dispatch({
         type: "SUCCESSFUL_REGISTER",
@@ -51,6 +52,7 @@ const UserState = (props) => {
       console.log(res);
 
       const token = res.data.data;
+      console.log("token login", token);
 
       dispatch({
         type: "SUCCESSFUL_LOGIN",
