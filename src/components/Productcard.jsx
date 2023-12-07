@@ -1,29 +1,24 @@
-const Productcard = ({ product, key }) => {
+import { Link } from "react-router-dom";
+
+const Productcard = ({ product }) => {
   return (
     <>
-      <div>
-        <div
-          key={key}
-          href={product.href}
-          className="group rounded bg-black relative z-10"
-        >
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-            <img
-              src={product.imageSrc}
-              alt={product.imageAlt}
-              className="h-full w-full object-cover object-center group-hover:opacity-75"
-            />
-          </div>
-          <h3 className="mt-4 text-lg text-white">{product.name}</h3>
-          <p className="text-sm text-gray-500">{product.description}</p>
-          <div className="flex justify-around items-center">
-            <p className="mt-1 text-xl text-white">{product.price} usd</p>
-            <button className="rounded bg-purple-900 py-2 my-2 hover:bg-red-500">
-              Add to cart
-            </button>
-          </div>
-        </div>
-      </div>
+      <ul>
+        <li key={product.slug}>
+          <Link to={`/products/${product.slug}`}>
+            <div className="flex flex-col justify-center items-center bg-black rounded border border-white">
+              <br />
+              <img
+                src={product.img[0]}
+                alt={product.name}
+                className="h-62 w-60"
+              />
+              <br />
+              <span className="text-lg">{product.name}</span>
+            </div>
+          </Link>
+        </li>
+      </ul>
     </>
   );
 };

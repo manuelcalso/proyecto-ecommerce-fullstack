@@ -19,21 +19,57 @@ const ProductState = (props) => {
       slug: "",
     },
   };
-
   //manejo reducer(cambios en el estado )
   const [globalState, dispatch] = useReducer(ProductReducer, initialState);
 
   //eventos dispatchers
-  const getProduts = async () => {
-    const res = await axios.get("http://localhost:3005/api/v1/products/");
-    console.log(res);
+  const getProducts = async () => {
+    try {
+      console.log("entrando a getProducts");
+      const res = await axios.get("http://localhost:3005/api/v1/products/");
+      const {
+        data: { data: dataProducts },
+      } = res;
+
+      console.log("respuesta de productos", dataProducts);
+
+      // VALIDACIONES DE ERRORES
+      dispatch({
+        type: "GET_PRODUCTS",
+        payload: dataProducts,
+      });
+    } catch (error) {
+      console.log("no se completo el fetch...", error);
+    }
+  };
+
+  const getProduct = async (slug) => {
+    console.log("entrando a getProduct");
+    try {
+      const res = await axios.get(
+        `http://localhost:3005/api/v1/products/readone/${slug}`
+      );
+
+      const {
+        data: { data: dataProduct },
+      } = res;
+      console.log(res);
+      dispatch({
+        type: "GET_PRODUCT",
+        payload: dataProduct,
+      });
+    } catch (error) {
+      console.log("error, datos no encontrados", error);
+    }
   };
 
   return (
     <ProductContext.Provider
       value={{
         products: globalState.products,
-        getProduts,
+        product: globalState.product,
+        getProducts,
+        getProduct,
       }}
     >
       {props.children}

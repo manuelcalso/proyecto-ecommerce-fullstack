@@ -2,8 +2,30 @@ import profileimg from "../../assets/marco.png";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import UserContext from "../../context/User/UserContext";
+import { useContext, useState } from "react";
 
 export default function Login() {
+  const userCtx = useContext(UserContext);
+  const { loginUser } = userCtx;
+
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    setUser({
+      ...user,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    return loginUser(user);
+  };
+
   return (
     <>
       <Header
@@ -12,15 +34,8 @@ export default function Login() {
         }
         imagenprofile={profileimg}
       />
-      {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full bg-white">
-          <body class="h-full">
-          ```
-        */}
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black bg-product ">
+
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black bg-product font-brodies ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm navletter  ">
           <a href="/">
             <img
@@ -28,22 +43,27 @@ export default function Login() {
               src={
                 "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
               }
-              alt="Your Company"
+              alt="Plastilogo"
             />
           </a>
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+          <h2 className="mt-10 text-center text-2xl leading-9 tracking-tight text-white">
             Sign in to your account
           </h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm navletter">
-          <form className="space-y-6" action="#" method="POST">
+          <form
+            className="space-y-6"
+            action="#"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
             <div>
               <label
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-white"
               >
-                Email address
+                Email
               </label>
               <div className="mt-2">
                 <input
@@ -53,6 +73,8 @@ export default function Login() {
                   autoComplete="email"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  value={user.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -82,6 +104,8 @@ export default function Login() {
                   autoComplete="current-password"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  value={user.password}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -89,7 +113,7 @@ export default function Login() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-purple-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5  leading-6 text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign in
               </button>

@@ -3,10 +3,8 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
+  { name: "Sign Up", href: "/signup" },
   { name: "Products", href: "/products" },
-  { name: "Registration", href: "/registration" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
 ];
 
 export default function Herosection(props) {
@@ -20,7 +18,7 @@ export default function Herosection(props) {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Plastic Beach</span>
               <img
                 className=" imagenlogo h-24 w-24 rounded-full bg-white"
@@ -109,7 +107,7 @@ export default function Herosection(props) {
           <video autoPlay muted loop className="video">
             <source
               src={
-                "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674480/videos/403670244_6898248946909846_5336635842586376788_n_p5y70b.mp4"
+                "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674388/videos/pexels_d05v8s.mp4"
               }
               type="video/mp4"
             />
@@ -141,7 +139,7 @@ export default function Herosection(props) {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="/products"
+                href="/signup"
                 className="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
               >
                 Get started

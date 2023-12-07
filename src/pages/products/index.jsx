@@ -3,7 +3,6 @@ import "./../../../src/index.css";
 import Header from "./../../components/Header";
 import Catalog from "./../../components/Catalog";
 import Footer from "../../components/Footer";
-
 import profileimg from "../../assets/marco.png";
 
 export default function Mainproducts() {

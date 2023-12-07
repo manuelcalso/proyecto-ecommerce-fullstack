@@ -56,7 +56,9 @@ export default function Footer(props) {
               <a href="#">
                 <img
                   className=" imagenlogo h-24 w-24 rounded-full bg-white"
-                  src={props.imagenlogo}
+                  src={
+                    "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+                  }
                   alt="gorillaz logo"
                 />
               </a>
