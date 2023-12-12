@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import UserContext from "../../context/User/UserContext";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import toast, { Toaster } from "react-hot-toast";
 
 function SignUp() {
   const [newUser, setNewUser] = useState({
@@ -32,10 +33,13 @@ function SignUp() {
     event.preventDefault();
     return registerUser(newUser);
   };
+  const notify = () => toast.success("Successfully Sign Up!");
 
   return (
     <>
-      <Header />
+      <Header>
+        <Toaster position="top-center" reverseOrder={false} />
+      </Header>
       <div className="flex flex-col justify-center items-center form-bg">
         <form
           onSubmit={handleSubmit}
@@ -107,7 +111,10 @@ function SignUp() {
             />
           </div>
 
-          <button className="my-8 py-2 border border-white rounded bg-green-500 text-black text-2xl flex justify-center items-center">
+          <button
+            className="my-8 py-2 border border-white rounded bg-green-500 text-black text-2xl flex justify-center items-center"
+            onClick={notify}
+          >
             Crear usuario
           </button>
         </form>

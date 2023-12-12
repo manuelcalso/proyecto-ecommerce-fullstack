@@ -23,7 +23,7 @@ export default function Router() {
         <ProductState>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Home />}></Route>
+              <Route path="/" element={<Public component={Home} />}></Route>
               <Route
                 path="/products"
                 element={<Public component={Mainproducts} />}

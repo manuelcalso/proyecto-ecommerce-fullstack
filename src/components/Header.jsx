@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { Cart } from "react-bootstrap-icons";
 import UserContext from "../context/User/UserContext.jsx";
+import toast, { Toaster } from "react-hot-toast";
+import Cart from "../components/Cart.jsx";
 
 function Header() {
+  const [cartOpen, setCartOpen] = useState(false);
+  const [total, setTotal] = useState(0);
   const [user, setUser] = useState({
     name: "",
     lastname: "",
@@ -11,7 +14,9 @@ function Header() {
 
   const userCtx = useContext(UserContext);
 
-  const { authStatus, currentUser, logoutUser } = userCtx;
+  const { cart, getCart, authStatus, currentUser, logoutUser } = userCtx;
+  console.log(cart);
+  console.log(getCart);
   console.log(authStatus);
 
   useEffect(() => {
@@ -24,10 +29,34 @@ function Header() {
       });
     }
   }, [currentUser]);
+  //actualizacion de carrito
+  useEffect(() => {
+    const fetchCart = async () => {
+      await getCart();
+    };
+    fetchCart();
+  }, [currentUser]);
+
+  //calculo del carrito
+  useEffect(() => {
+    const getTotalProducts = () => {
+      const totalQty = cart.reduce((acc, cv) => {
+        return acc + cv.quantity;
+      }, 0);
+      return totalQty;
+    };
+
+    const result = getTotalProducts();
+
+    setTotal(result);
+  }, [cart]);
+
+  const notify = () => toast.success("Successfully Log In!");
 
   return (
     <>
       <section className=" bg-[#850000] font-brodies">
+        <Toaster position="top-center" reverseOrder={false} />
         <ul className="flex flex-col sm:flex-row justify-between items-center gap-x-2 mx-2">
           <img
             src={
@@ -55,9 +84,14 @@ function Header() {
                   <Link to="/">Log Out</Link>
                 </button>
                 <p className="flex flex-row ">
-                  <Link to="/cart" className="flex flex-row gap-x-2">
-                    <Cart /> Your Cart: <span>3 pizzas</span>
-                  </Link>
+                  <button
+                    to="/cart"
+                    className="flex flex-row gap-x-2"
+                    onClick={() => setCartOpen(!cartOpen)}
+                  >
+                    Your Cart: {cartOpen && <Cart />}
+                    <span>{total}</span>
+                  </button>
                 </p>
               </div>
             </>

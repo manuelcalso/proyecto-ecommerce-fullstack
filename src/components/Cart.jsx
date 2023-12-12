@@ -1,37 +1,27 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import purplecat from "./../assets/products/gatomorado.webp";
-import radiohead from "./../assets/products/radiohead.webp";
-
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc: purplecat,
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc: radiohead,
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
+import { useCart } from "../hooks/useCart";
+import { Link } from "react-router-dom";
+import UserContext from "../context/User/UserContext";
 
 export default function Cart() {
+  const userCtx = useContext(UserContext);
+
+  const { cart, sessionURL, getCheckoutSession, editCart } = userCtx;
+  const { total, handleSubmit, handleChange, handleRemove } = useCart(
+    cart,
+    getCheckoutSession,
+    editCart
+  );
+
+  console.log("cart", cart);
+
   const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    if (sessionURL) window.location.href = sessionURL;
+  }, [sessionURL]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -86,47 +76,70 @@ export default function Cart() {
                             role="list"
                             className="-my-6 divide-y divide-gray-200"
                           >
-                            {products.map((product) => (
-                              <li key={product.id} className="flex py-6">
-                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                  <img
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
-                                    className="h-full w-full object-cover object-center"
-                                  />
-                                </div>
-
-                                <div className="ml-4 flex flex-1 flex-col">
-                                  <div>
-                                    <div className="flex justify-between text-base font-medium text-black">
-                                      <h3>
-                                        <a href={product.href}>
-                                          {product.name}
-                                        </a>
-                                      </h3>
-                                      <p className="ml-4">{product.price}</p>
-                                    </div>
-                                    <p className="mt-1 text-sm text-black">
-                                      {product.color}
+                            {cart.map((e) => {
+                              return (
+                                <>
+                                  <li
+                                    key={e._id}
+                                    className="flex flex-col justify-center items-center text-black text-2xl"
+                                  >
+                                    <Link to={`/products/${e.slug}`}>
+                                      <img
+                                        src={e.img}
+                                        alt="product-image"
+                                        className="h-30 w-20"
+                                      />
+                                    </Link>
+                                    <h3>
+                                      <Link to={`/products/${e.slug}`}>
+                                        {e.name}
+                                      </Link>
+                                    </h3>
+                                    <p>{e.size}</p>
+                                    <p>
+                                      $
+                                      {((e.price / 100) * e.quantity).toFixed(
+                                        2
+                                      )}
                                     </p>
-                                  </div>
-                                  <div className="flex flex-1 items-end justify-between text-sm">
-                                    <p className="text-black">
-                                      Qty {product.quantity}
-                                    </p>
+                                    <select
+                                      name={e.priceID}
+                                      onChange={(e) => {
+                                        handleChange(e);
+                                      }}
+                                      className="text-white"
+                                    >
+                                      {Array(5) //[, , , , ]
+                                        .fill(null)
+                                        .map((_, i) => {
+                                          const initial = i + 1;
+                                          return initial === e.quantity ? (
+                                            <option selected value={initial}>
+                                              {initial}
+                                            </option>
+                                          ) : (
+                                            <option value={initial}>
+                                              {initial}
+                                            </option>
+                                          );
+                                        })}
+                                    </select>
+                                    <br />
 
-                                    <div className="flex">
-                                      <button
-                                        type="button"
-                                        className="font-medium text-indigo-600 hover:text-black"
-                                      >
-                                        Remove
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            ))}
+                                    <button
+                                      type="button"
+                                      onClick={(evt) => {
+                                        handleRemove(evt, e.priceID);
+                                      }}
+                                      className="border border-black rounded text-black bg-red-500 px-2"
+                                    >
+                                      Remove
+                                    </button>
+                                  </li>
+                                  <br />
+                                </>
+                              );
+                            })}
                           </ul>
                         </div>
                       </div>
@@ -134,8 +147,10 @@ export default function Cart() {
 
                     <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
-                        <p>Subtotal</p>
-                        <p>$262.00</p>
+                        <div className="flex flex-row justify-center items-center text-lg">
+                          <p>Total</p>
+                          <p> $ {total.toFixed(2)}</p>
+                        </div>
                       </div>
                       <p className="mt-0.5 text-sm text-white">
                         Shipping and taxes calculated at checkout.
@@ -144,6 +159,7 @@ export default function Cart() {
                         <a
                           href="#"
                           className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                          onClick={handleSubmit}
                         >
                           Checkout
                         </a>

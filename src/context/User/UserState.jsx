@@ -19,10 +19,13 @@ const UserState = (props) => {
       receipts: [],
       zipCode: 0,
     },
+    cart: [],
     authStatus: false,
+    sessionURL: null,
   };
 
   // 2. REDUCERS
+
   const [globalState, dispatch] = useReducer(UserReducer, initialState);
 
   // 3. DISPATCHERS
@@ -68,20 +71,25 @@ const UserState = (props) => {
   const verifyingToken = async () => {
     // 1. NECESITO LEER EL TOKEN DEL USUARIO QUE ESTÁ EN LOCAL STORAGE
     getToken();
+    const token = localStorage.getItem("token");
+    console.log("token", token);
     // 2. REALIZAR LA LLAMADA VÍA AXIOS
     try {
-      const res = await axiosClient.get("/api/v1/users/verifytoken");
-      console.log(res);
+      const res = await axiosClient.get("/api/v1/users/verifytoken", {
+        headers: { "x-auth-token": token },
+      });
+
+      console.log("res", res);
 
       const userData = res.data.data;
-      console.log(userData);
+      console.log("userData", userData);
 
       dispatch({
         type: "GET_DATA_USER",
         payload: userData,
       });
     } catch (error) {
-      console.log(error);
+      console.log("error:", error);
       return;
     }
 
@@ -99,10 +107,55 @@ const UserState = (props) => {
   };
 
   // E. EDITAR CARRITO DE COMPRA
+  const editCart = async (data) => {
+    console.log(data);
+    //obtener el token
+    getToken();
+    try {
+      const res = await axiosClient.put("/api/v1/checkout/edit-cart", {
+        products: data,
+      });
+      console.log(res);
+      await getCart();
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+  };
 
   // F. OBTENER CARRITO DE COMPRA
 
+  const getCart = async () => {
+    getToken();
+
+    try {
+      const res = await axiosClient.get("/api/v1/checkout/get-cart");
+      console.log(res);
+
+      dispatch({
+        type: "GET_CART",
+        payload: res.data.cart.products,
+      });
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+  };
+
   // G. CREAR SESIÓN DE STRIPE
+
+  const getCheckoutSession = async () => {
+    getToken();
+
+    const res = await axiosClient.get(
+      "/api/v1/checkout/create-checkout-session"
+    );
+    console.log(res);
+    dispatch({
+      type: "GET_CHECKOUT_SESSION",
+      payload: res.data.session_url,
+    });
+  };
 
   // H. EDITAR PERFIL
 
@@ -113,10 +166,15 @@ const UserState = (props) => {
       value={{
         currentUser: globalState.currentUser,
         authStatus: globalState.authStatus,
+        cart: globalState.cart,
+        sessionURL: globalState.sessionURL,
         registerUser,
         verifyingToken,
         logoutUser,
         loginUser,
+        editCart,
+        getCart,
+        getCheckoutSession,
       }}
     >
       {props.children}

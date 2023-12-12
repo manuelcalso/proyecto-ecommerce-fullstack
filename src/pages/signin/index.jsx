@@ -1,4 +1,5 @@
 import profileimg from "../../assets/marco.png";
+import toast, { Toaster } from "react-hot-toast";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -6,6 +7,8 @@ import UserContext from "../../context/User/UserContext";
 import { useContext, useState } from "react";
 
 export default function Login() {
+  const notify = () => toast.success("Successfully Log In!");
+
   const userCtx = useContext(UserContext);
   const { loginUser } = userCtx;
 
@@ -36,6 +39,7 @@ export default function Login() {
       />
 
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black bg-product font-brodies ">
+        <Toaster position="top-center" reverseOrder={false} />
         <div className="sm:mx-auto sm:w-full sm:max-w-sm navletter  ">
           <a href="/">
             <img
@@ -114,6 +118,7 @@ export default function Login() {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5  leading-6 text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={notify}
               >
                 Sign in
               </button>
