@@ -15,7 +15,7 @@ export default function Cart() {
     editCart
   );
 
-  console.log("cart", cart);
+  //console.log("cart", cart);
 
   const [open, setOpen] = useState(true);
 
@@ -37,7 +37,6 @@ export default function Cart() {
         >
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
-
         <div className="fixed inset-0 overflow-hidden ">
           <div className="absolute inset-0 overflow-hidden">
             <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
@@ -54,7 +53,7 @@ export default function Cart() {
                   <div className="flex h-full flex-col overflow-y-scroll cardbackground shadow-xl">
                     <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                       <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg font-medium text-black ">
+                        <Dialog.Title className="text-sm font-medium text-black">
                           Shopping cart
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
@@ -81,7 +80,7 @@ export default function Cart() {
                                 <>
                                   <li
                                     key={e._id}
-                                    className="flex flex-col justify-center items-center text-black text-2xl"
+                                    className="flex flex-row justify-start items-center text-black text-sm gap-x-2"
                                   >
                                     <Link to={`/products/${e.slug}`}>
                                       <img
@@ -131,7 +130,7 @@ export default function Cart() {
                                       onClick={(evt) => {
                                         handleRemove(evt, e.priceID);
                                       }}
-                                      className="border border-black rounded text-black bg-red-500 px-2"
+                                      className="border border-black rounded text-black bg-red-500 px-2 shadow-text"
                                     >
                                       Remove
                                     </button>
@@ -141,42 +140,39 @@ export default function Cart() {
                               );
                             })}
                           </ul>
-                        </div>
-                      </div>
-                    </div>
+                          <div className="border-t border-gray-200 px-4 py-4 sm:px-6">
+                            <div className="flex justify-between text-base font-medium text-gray-900">
+                              <div className="flex flex-row justify-center items-center text-sm ">
+                                <p>Total</p>
+                                <p> $ {total.toFixed(2)}</p>
+                              </div>
+                            </div>
 
-                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
-                      <div className="flex justify-between text-base font-medium text-gray-900">
-                        <div className="flex flex-row justify-center items-center text-lg">
-                          <p>Total</p>
-                          <p> $ {total.toFixed(2)}</p>
+                            <div className="mt-6">
+                              <a
+                                href="#"
+                                className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 shadow-text"
+                                onClick={handleSubmit}
+                              >
+                                Checkout
+                              </a>
+                            </div>
+                            <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                              <p>
+                                or
+                                <br />
+                                <button
+                                  type="button"
+                                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                                  onClick={() => setOpen(false)}
+                                >
+                                  Continue Shopping
+                                  <span aria-hidden="true"> &rarr;</span>
+                                </button>
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <p className="mt-0.5 text-sm text-white">
-                        Shipping and taxes calculated at checkout.
-                      </p>
-                      <div className="mt-6">
-                        <a
-                          href="#"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                          onClick={handleSubmit}
-                        >
-                          Checkout
-                        </a>
-                      </div>
-                      <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                        <p>
-                          or
-                          <br />
-                          <button
-                            type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
-                            onClick={() => setOpen(false)}
-                          >
-                            Continue Shopping
-                            <span aria-hidden="true"> &rarr;</span>
-                          </button>
-                        </p>
                       </div>
                     </div>
                   </div>

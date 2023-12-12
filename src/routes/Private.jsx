@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component }) => {
   // SABER SI EL USUARIO ESTÁ AUTENTICADO O NO, CON AUTHSTATUS
   const userCtx = useContext(UserContext);
   const { authStatus, verifyingToken } = userCtx;
-  console.log(authStatus);
+  //console.log(authStatus);
 
   // 2. HOOK DE EFECTO
   // VERIFICARÁ DE INICIO Y CUANDO HAYA UN CAMBIO EN AUTHSTATUS SI EL USUARIO TUVO MODIFICACIONES EN SU SESIÓN, Y SI SÍ, EJECUTARÁ EL VERIFYINGT TOKEN
@@ -29,7 +29,7 @@ const PrivateRoute = ({ component: Component }) => {
     verifyToken();
   }, [authStatus]);
 
-  console.log(isLoading);
+  //console.log(isLoading);
   // 3. GENERACIÓN DE COMPONENTE
   return (
     <>

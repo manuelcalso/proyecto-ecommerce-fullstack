@@ -26,13 +26,13 @@ const ProductState = (props) => {
   //eventos dispatchers
   const getProducts = async () => {
     try {
-      console.log("entrando a getProducts");
+      //console.log("entrando a getProducts");
       const res = await axiosClient.get("/api/v1/products/");
       const {
         data: { data: dataProducts },
       } = res;
 
-      console.log("respuesta de productos", dataProducts);
+      //console.log("respuesta de productos", dataProducts);
 
       // VALIDACIONES DE ERRORES
       dispatch({
@@ -45,14 +45,14 @@ const ProductState = (props) => {
   };
 
   const getProduct = async (slug) => {
-    console.log("entrando a getProduct");
+    //console.log("entrando a getProduct");
     try {
       const res = await axiosClient.get(`/api/v1/products/readone/${slug}`);
 
       const {
         data: { data: dataProduct },
       } = res;
-      console.log(res);
+      //console.log(res);
       dispatch({
         type: "GET_PRODUCT",
         payload: dataProduct,

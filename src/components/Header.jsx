@@ -15,9 +15,9 @@ function Header() {
   const userCtx = useContext(UserContext);
 
   const { cart, getCart, authStatus, currentUser, logoutUser } = userCtx;
-  console.log(cart);
-  console.log(getCart);
-  console.log(authStatus);
+  //console.log(cart);
+  //console.log(getCart);
+  //console.log(authStatus);
 
   useEffect(() => {
     if (currentUser) {

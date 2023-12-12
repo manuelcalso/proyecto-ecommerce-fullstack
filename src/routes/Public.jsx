@@ -26,7 +26,7 @@ const PublicRoute = ({ component: Component }) => {
     verifyToken();
   }, [authStatus]);
 
-  console.log(isLoading);
+  //console.log(isLoading);
   // 3. GENERACIÓN DE COMPONENTE
   return (
     <>

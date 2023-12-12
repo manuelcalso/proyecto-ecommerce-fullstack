@@ -11,7 +11,7 @@ const UserReducer = (globalState, action) => {
     case "LOGOUT_USER":
       localStorage.removeItem("token");
 
-      console.log("token borrado");
+      //console.log("token borrado");
 
       return {
         ...globalState,

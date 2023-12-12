@@ -32,12 +32,12 @@ const UserState = (props) => {
 
   // A. REGISTRO DE USUARIO
   const registerUser = async (form) => {
-    console.log("form", form);
+    //console.log("form", form);
     try {
       const res = await axiosClient.post("/api/v1/users/create", form);
-      console.log("res", res);
+      //console.log("res", res);
       const token = res.data.data;
-      console.log("token", token);
+      //console.log("token", token);
 
       dispatch({
         type: "SUCCESSFUL_REGISTER",
@@ -52,10 +52,10 @@ const UserState = (props) => {
   const loginUser = async (form) => {
     try {
       const res = await axiosClient.post("/api/v1/users/login", form);
-      console.log(res);
+      //console.log(res);
 
       const token = res.data.data;
-      console.log("token login", token);
+      //console.log("token login", token);
 
       dispatch({
         type: "SUCCESSFUL_LOGIN",
@@ -72,17 +72,17 @@ const UserState = (props) => {
     // 1. NECESITO LEER EL TOKEN DEL USUARIO QUE ESTÁ EN LOCAL STORAGE
     getToken();
     const token = localStorage.getItem("token");
-    console.log("token", token);
+    //console.log("token", token);
     // 2. REALIZAR LA LLAMADA VÍA AXIOS
     try {
       const res = await axiosClient.get("/api/v1/users/verifytoken", {
         headers: { "x-auth-token": token },
       });
 
-      console.log("res", res);
+      //console.log("res", res);
 
       const userData = res.data.data;
-      console.log("userData", userData);
+      //console.log("userData", userData);
 
       dispatch({
         type: "GET_DATA_USER",
@@ -98,7 +98,7 @@ const UserState = (props) => {
 
   // D. CERRAR SESIÓN
   const logoutUser = () => {
-    console.log("borrando usuario");
+    //console.log("borrando usuario");
 
     dispatch({
       type: "LOGOUT_USER",
@@ -108,14 +108,14 @@ const UserState = (props) => {
 
   // E. EDITAR CARRITO DE COMPRA
   const editCart = async (data) => {
-    console.log(data);
+    //console.log(data);
     //obtener el token
     getToken();
     try {
       const res = await axiosClient.put("/api/v1/checkout/edit-cart", {
         products: data,
       });
-      console.log(res);
+      //console.log(res);
       await getCart();
     } catch (error) {
       console.log(error);
@@ -130,7 +130,7 @@ const UserState = (props) => {
 
     try {
       const res = await axiosClient.get("/api/v1/checkout/get-cart");
-      console.log(res);
+      //console.log(res);
 
       dispatch({
         type: "GET_CART",
@@ -150,7 +150,7 @@ const UserState = (props) => {
     const res = await axiosClient.get(
       "/api/v1/checkout/create-checkout-session"
     );
-    console.log(res);
+    //console.log(res);
     dispatch({
       type: "GET_CHECKOUT_SESSION",
       payload: res.data.session_url,

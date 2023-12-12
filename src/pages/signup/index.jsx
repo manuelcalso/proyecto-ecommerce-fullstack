@@ -16,12 +16,12 @@ function SignUp() {
   });
 
   const userCtx = useContext(UserContext);
-  console.log(userCtx);
+  //console.log(userCtx);
 
   const { registerUser } = userCtx;
 
   const handleChange = (event) => {
-    console.log(event.target.name);
+    //console.log(event.target.name);
 
     setNewUser({
       ...newUser,
