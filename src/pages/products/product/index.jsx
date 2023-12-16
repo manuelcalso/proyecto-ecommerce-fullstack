@@ -13,7 +13,7 @@ function ProductPage() {
   //custom hook
   const { authStatus, cart, product, localPrices, handleChange, handleSubmit } =
     useProduct(slug);
-
+  console.log(localPrices);
   const { _id, idStripe, name, currency, prices, img, description } = product;
 
   const quantityOptions = [0, 1, 2, 3, 4, 5];
@@ -54,56 +54,65 @@ function ProductPage() {
             <ul>
               {prices.length !== 0 ? (
                 <>
-                  {localPrices.map((element) => {
-                    console.log(element);
-                    const { price, size, priceDescription } = element;
+                  {Array.isArray(localPrices) &&
+                    localPrices.map((element) => {
+                      console.log(element);
+                      const { price, size, priceDescription } = element;
+                      console.log(price);
+                      console.log(size);
+                      console.log(priceDescription);
 
-                    return (
-                      <>
-                        <li className="flex flex-col font-brodies mx-2 my-2 gap-y-2">
-                          <h2>Size : {size}</h2>
-                          <p>
-                            Price : {priceFormatter(price)} {currency}{" "}
-                          </p>
-                          {authStatus ? (
-                            <>
-                              <select
-                                type="option"
-                                name={`${element.id}`}
-                                data-product-name={name}
-                                data-product-size={size}
-                                data-product-pricedescription={priceDescription}
-                                data-product-price={price}
-                                data-product-img={img[0]}
-                                data-product-slug={slug}
-                                onChange={(evt) => {
-                                  handleChange(evt);
-                                }}
-                              >
-                                {quantityOptions.map((qo) => {
-                                  return (
-                                    <>
-                                      {qo === element.quantity ? (
-                                        <>
-                                          <option selected value={qo}>
-                                            {qo}
-                                          </option>
-                                        </>
-                                      ) : (
-                                        <>
-                                          <option value={qo}>{qo}</option>
-                                        </>
-                                      )}
-                                    </>
-                                  );
-                                })}
-                              </select>
-                            </>
-                          ) : null}
-                        </li>
-                      </>
-                    );
-                  })}
+                      return (
+                        <>
+                          <li
+                            key={size}
+                            className="flex flex-col font-brodies mx-2 my-2 gap-y-2"
+                          >
+                            <h2>Size : {element.size}</h2>
+                            <p>
+                              Price : {priceFormatter(element.price)} {currency}{" "}
+                            </p>
+                            {authStatus ? (
+                              <>
+                                <select
+                                  type="option"
+                                  name={`${element.id}`}
+                                  data-product-name={name}
+                                  data-product-size={size}
+                                  data-product-pricedescription={
+                                    priceDescription
+                                  }
+                                  data-product-price={price}
+                                  data-product-img={img[0]}
+                                  data-product-slug={slug}
+                                  onChange={(evt) => {
+                                    handleChange(evt);
+                                  }}
+                                >
+                                  {quantityOptions.map((qo) => {
+                                    return (
+                                      <>
+                                        {qo === element.quantity ? (
+                                          <>
+                                            <option selected value={qo}>
+                                              {qo}
+                                            </option>
+                                          </>
+                                        ) : (
+                                          <>
+                                            <option value={qo}>{qo}</option>
+                                          </>
+                                        )}
+                                      </>
+                                    );
+                                  })}
+                                </select>
+                              </>
+                            ) : null}
+                          </li>
+                        </>
+                      );
+                    })}
                 </>
               ) : (
                 "No price available"

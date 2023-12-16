@@ -112,10 +112,10 @@ function SignUp() {
           </div>
 
           <button
-            className="my-8 py-2 border border-white rounded bg-green-500 text-black text-2xl flex justify-center items-center"
+            className="my-8 py-2 border border-green-900 hover:border-purple-500 border-2 hover:border-4 rounded bg-green-500 text-black text-2xl flex flex-row justify-center items-center"
             onClick={notify}
           >
-            Crear usuario
+            Sign Up
           </button>
         </form>
       </div>

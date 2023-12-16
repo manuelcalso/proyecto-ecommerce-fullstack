@@ -107,7 +107,7 @@ export default function Herosection(props) {
           <video autoPlay muted loop className="video">
             <source
               src={
-                "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674388/videos/pexels_d05v8s.mp4"
+                "https://res.cloudinary.com/dgzghl0ur/video/upload/v1702696070/portafolio/snow_accvov.mp4"
               }
               type="video/mp4"
             />
