@@ -1,6 +1,9 @@
-# React + Vite
+# Proyecto Plastic Beach Co.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+## Descripción
+En Este proyecto se desarrolla la tienda ecommerce Platic Beach con venta de playeras en linea y posiblemente para otros productos; utilizando generalmente componentes de Tailwind el proyecto presenta un Home landin page 
+
 
 Currently, two official plugins are available:
 
