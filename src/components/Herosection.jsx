@@ -14,7 +14,7 @@ export default function Herosection(props) {
     <div className="bg-black navletter ">
       <header className="absolute inset-x-0 top-0 z-50 font-brodies">
         <nav
-          className="flex items-center justify-between p-6 lg:px-8"
+          className="flex items-center justify-between p-6 lg:px-8 shadow-text"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
@@ -118,20 +118,20 @@ export default function Herosection(props) {
           <div className="hidden sm:mb-4 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-m leading-6 text-white ring-1 ring-gray-900/10 hover:ring-white font-bellerose">
               Prepare for our new collection!{" "}
-              <a href="#" className="font-semibold text-white">
+              <a href="/products" className="font-semibold text-white">
                 <span className="absolute inset-0" aria-hidden="true" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
           <div className="text-center">
-            <div className="mt-10 text-4xl tracking-tight text-[#DF340D] tracking-wider  sm:text-6xl font-brodies  ">
+            <div className="mt-10 text-4xl tracking-tight text-[#DF340D] tracking-wider  sm:text-6xl font-brodies shadow-text ">
               Plastic Beach
             </div>
-            <p className="text-xl leading-8 text-gray-400 font-bellerose italic tracking-widest">
+            <p className="text-xl leading-8 text-gray-400 font-bellerose italic tracking-widest shadow-text-white">
               Streetwear
             </p>
-            <p className="mt-6 text-2xl leading-8 text-[#ffffff] font-bellerose">
+            <p className="mt-6 text-2xl leading-8 text-[#ffffff] font-bellerose shadow-text">
               Welcome to the world of Plastic Beach where music and fashion
               collide in a harmony of creativity. Our collection of unique,
               artistically inspired T-shirts is more than just apparel. With
@@ -140,7 +140,7 @@ export default function Herosection(props) {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="/signup"
-                className="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
+                className="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 shadow-text transition "
               >
                 Get started
               </a>

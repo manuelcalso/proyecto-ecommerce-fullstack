@@ -13,7 +13,7 @@ export default function Products() {
     <div className="bg-product font-brodies ">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
         <h2 className="text-3xl tracking-tight imagenlogo">
-          <div className="flex flex-row items-center justify-center gap-3 text-yellow-300  py-1 bg-black rounded-full">
+          <div className="flex flex-row items-center justify-center gap-3 text-yellow-300  py-1 bg-black rounded-full shadow-text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

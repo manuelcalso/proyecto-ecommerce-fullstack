@@ -402,3 +402,31 @@
 .shadow-text {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.shadow-text-white {
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.flicker {
+  animation-name: flicker;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

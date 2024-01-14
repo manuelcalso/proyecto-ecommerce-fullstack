@@ -7,10 +7,10 @@ const links = [
 
 export default function Footer(props) {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-2 sm:py-3 navletter">
+    <div className="relative isolate overflow-hidden bg-gray-900 py-2 sm:py-5 navletter">
       <img
         src={
-          "https://res.cloudinary.com/dgzghl0ur/image/upload/v1701987526/footer1280x1024_zfsz3r.jpg"
+          "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705204421/products%20ecommerce/logos/caminar-footer_esnyqj.jpg"
         }
         alt="background img"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
@@ -41,12 +41,12 @@ export default function Footer(props) {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-4">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl text-white sm:text-4xl font-brodies text-shadow">
+          <h2 className="text-4xl text-white sm:text-4xl font-brodies shadow-text-white ">
             Wear the Rhythm...
           </h2>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none font-bellerose">
-          <div className="flex flex-row justify-end items-center gap-x-10">
+          <div className="flex flex-row justify-end items-center gap-x-10 flicker">
             <a href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

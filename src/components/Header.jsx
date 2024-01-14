@@ -15,9 +15,6 @@ function Header() {
   const userCtx = useContext(UserContext);
 
   const { cart, getCart, authStatus, currentUser, logoutUser } = userCtx;
-  //console.log(cart);
-  //console.log(getCart);
-  //console.log(authStatus);
 
   useEffect(() => {
     if (currentUser) {
@@ -64,29 +61,29 @@ function Header() {
             }
             className="rounded-full h-20 w-20 imagenlogo"
           />
-          <li className="bg-black rounded py-2 px-2 text-xl ">
+          <li className="bg-black rounded py-2 px-2 text-xl shadow-text-white ">
             <Link to="/">Home</Link>
           </li>
 
           {authStatus ? (
             <>
               <div className="flex flex-col sm:flex-row justify-end items-center gap-x-5 bg-black rounded py-2 px-2">
-                <p>
-                  Welcome, {user.name} {user.lastname}
+                <p className="shadow-text-white">
+                  Welcome {user.name} {user.lastname}
                 </p>
-                <p className="bg-purple-900 rounded px-2">
+                <p className="bg-purple-900 rounded px-2 shadow-text">
                   <Link to="/products">Products</Link>
                 </p>
                 <button
                   onClick={logoutUser}
-                  className="border border-white rounded px-2 py-1 text-green-500"
+                  className="border border-white rounded px-2 py-1 text-green-500 "
                 >
                   <Link to="/">Log Out</Link>
                 </button>
                 <p className="flex flex-row ">
                   <button
                     to="/cart"
-                    className="flex flex-row gap-x-2"
+                    className="flex flex-row gap-x-2 shadow-text-white"
                     onClick={() => setCartOpen(!cartOpen)}
                   >
                     Your Cart: {cartOpen && <Cart />}
@@ -97,7 +94,7 @@ function Header() {
             </>
           ) : (
             <>
-              <div className="flex flex-col sm:flex-row gap-x-10 font-brodies text-xl justify-center items-center h-20 w-auto mx-2">
+              <div className="flex flex-col sm:flex-row gap-x-10 font-brodies text-xl justify-center items-center h-20 w-auto mx-2 shadow-text">
                 <li>
                   <Link to="/signup">Sign Up</Link>
                 </li>
