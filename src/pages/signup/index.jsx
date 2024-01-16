@@ -52,7 +52,7 @@ function SignUp() {
               name="name"
               value={newUser.name}
               onChange={handleChange}
-              className="py-1 px-2 rounded"
+              className="py-1 px-2 rounded shadow-text-white text-black font-bold"
             />
           </div>
 
@@ -62,7 +62,7 @@ function SignUp() {
               name="lastname"
               value={newUser.lastname}
               onChange={handleChange}
-              className="py-1 px-2 rounded"
+              className="py-1 px-2 rounded shadow-text-white text-black font-bold"
             />
           </div>
 
@@ -73,7 +73,7 @@ function SignUp() {
               type="email"
               value={newUser.email}
               onChange={handleChange}
-              className="py-1 px-2 rounded"
+              className="py-1 px-2 rounded shadow-text-white text-black font-bold"
             />
           </div>
 
@@ -84,7 +84,7 @@ function SignUp() {
               type="password"
               value={newUser.password}
               onChange={handleChange}
-              className="py-1 px-3 rounded shadow-text-white"
+              className="py-1 px-3 rounded shadow-text-white text-black"
               placeholder="Remember it..."
             />
           </div>
@@ -95,7 +95,7 @@ function SignUp() {
               type="address"
               value={newUser.address}
               onChange={handleChange}
-              className="py-1 px-2 rounded shadow-text-white"
+              className="py-1 px-2 rounded shadow-text-white text-black font-bold"
               placeholder="To deliver..."
             />
           </div>
@@ -106,7 +106,7 @@ function SignUp() {
               type="country"
               value={newUser.country}
               onChange={handleChange}
-              className="py-1 px-2 rounded"
+              className="py-1 px-2 rounded shadow-text-white text-black font-bold"
             />
           </div>
           <div className="my-5">
@@ -116,7 +116,7 @@ function SignUp() {
               type="zipcode"
               value={newUser.zipcode}
               onChange={handleChange}
-              className="py-1 px-2 rounded"
+              className="py-1 px-2 rounded shadow-text-white text-black font-bold"
             />
           </div>
           <div className="flex flex-row justify-center items-center">

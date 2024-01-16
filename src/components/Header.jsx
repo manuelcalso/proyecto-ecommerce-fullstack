@@ -48,30 +48,29 @@ function Header() {
     setTotal(result);
   }, [cart]);
 
-  const notify = () => toast.success("Successfully Log In!");
+  //const notify = () => toast.success("Successfully Log In!");
 
   return (
     <>
-      <section className=" bg-[#850000] font-brodies">
-        <Toaster position="top-center" reverseOrder={false} />
+      <section className=" theme-alt font-brodies">
         <ul className="flex flex-col sm:flex-row justify-between items-center gap-x-2 mx-2">
           <img
             src={
-              "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+              "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
             }
             className="rounded-full h-20 w-20 imagenlogo"
           />
-          <li className="bg-black rounded py-2 px-2 text-xl shadow-text-white ">
+          <li className="bg-black rounded py-2 px-2 text-xl shadow-text-white text-white ">
             <Link to="/">Home</Link>
           </li>
 
           {authStatus ? (
             <>
               <div className="flex flex-col sm:flex-row justify-end items-center gap-x-5 bg-black rounded py-2 px-2">
-                <p className="shadow-text-white">
+                <p className="shadow-text-white text-white">
                   Welcome {user.name} {user.lastname}
                 </p>
-                <p className="bg-purple-900 rounded px-2 shadow-text">
+                <p className="bg-purple-900 rounded px-2 shadow-text text-white">
                   <Link to="/products">Products</Link>
                 </p>
                 <button
@@ -83,7 +82,7 @@ function Header() {
                 <p className="flex flex-row ">
                   <button
                     to="/cart"
-                    className="flex flex-row gap-x-2 shadow-text-white"
+                    className="flex flex-row gap-x-2 shadow-text-white text-white"
                     onClick={() => setCartOpen(!cartOpen)}
                   >
                     Your Cart: {cartOpen && <Cart />}
@@ -91,15 +90,20 @@ function Header() {
                   </button>
                 </p>
               </div>
+              <Toaster position="top-center" reverseOrder={false} />
             </>
           ) : (
             <>
-              <div className="flex flex-col sm:flex-row gap-x-10 font-brodies text-xl justify-center items-center h-20 w-auto mx-2 shadow-text">
+              <div className="flex flex-col sm:flex-row gap-x-10 font-brodies text-xl justify-center items-center h-20 w-auto mx-2 ">
                 <li>
-                  <Link to="/signup">Sign Up</Link>
+                  <Link to="/signup" className="shadow-text">
+                    Sign Up
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/login">Log In</Link>
+                  <Link to="/login" className="shadow-text">
+                    Log In
+                  </Link>
                 </li>
               </div>
             </>

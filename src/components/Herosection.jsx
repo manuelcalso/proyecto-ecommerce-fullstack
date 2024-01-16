@@ -21,7 +21,7 @@ export default function Herosection(props) {
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Plastic Beach</span>
               <img
-                className=" imagenlogo h-24 w-24 rounded-full bg-white"
+                className=" imagenlogo h-24 w-24 rounded-full"
                 src={props.imagenlogo}
                 alt=""
               />
@@ -42,14 +42,17 @@ export default function Herosection(props) {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-m  leading-6 text-white"
+                className="text-2xl  leading-6 text-white theme-color rounded transition"
               >
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="/login" className="text-lg leading-6 text-white vibrate">
+            <a
+              href="/login"
+              className="text-2xl leading-6 text-white vibrate theme-color transition"
+            >
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>

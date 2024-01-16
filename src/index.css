@@ -404,7 +404,7 @@
 }
 
 .shadow-text-white {
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.356);
 }
 
 .flicker {
@@ -429,4 +429,18 @@
   100% {
     opacity: 1;
   }
+}
+
+.theme-color:hover {
+  color: #ff0000;
+}
+
+.theme:hover {
+  color: #ff0000;
+  background-color: #0e1607;
+}
+
+.theme-alt:hover {
+  color: #0e1607;
+  background-color: #ff0000b7;
 }

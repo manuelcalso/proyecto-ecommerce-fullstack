@@ -5,15 +5,15 @@ const links = [
   { name: "Work with us", href: "/" },
 ];
 
-export default function Footer(props) {
+export default function Footer() {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-2 sm:py-5 navletter">
       <img
         src={
-          "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705204421/products%20ecommerce/logos/caminar-footer_esnyqj.jpg"
+          "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705381749/products%20ecommerce/logos/pexels-caroline-cagnin-2169276_q3utzz.jpg"
         }
         alt="background img"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center "
       />
       <div
         className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
@@ -83,7 +83,7 @@ export default function Footer(props) {
                 <img
                   className=" imagenlogo h-24 w-24 rounded-full bg-white"
                   src={
-                    "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+                    "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
                   }
                   alt="gorillaz logo"
                 />

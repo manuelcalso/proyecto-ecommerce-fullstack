@@ -25,7 +25,7 @@ const Catalog = () => {
       </div>
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-20 lg:max-w-7xl lg:px-8">
         <h2 className="sr-only"></h2>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 font-brodie border border-green-900 bg-[#830000] font-brodies">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 font-brodie bg-[#830000] font-brodies shadow-text-white">
           {products &&
             products.map((product) => (
               <Productcard key={product.slug} product={product} />

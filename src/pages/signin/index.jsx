@@ -45,7 +45,7 @@ export default function Login() {
             <img
               className=" mx-auto h-28 w-auto rounded flicker"
               src={
-                "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
+                "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
               }
               alt="Plastilogo"
             />
@@ -76,7 +76,7 @@ export default function Login() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-2 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  shadow-text-white"
+                  className="block w-full rounded-md border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-text-white text-black font-bold"
                   value={user.email}
                   onChange={handleChange}
                 />
@@ -109,7 +109,7 @@ export default function Login() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-white  ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 shadow-text-white text-black font-bold"
                   value={user.password}
                   onChange={handleChange}
                 />
