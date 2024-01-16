@@ -59,6 +59,7 @@ function Header() {
               "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
             }
             className="rounded-full h-20 w-20 imagenlogo"
+            loading="lazy"
           />
           <li className="bg-black rounded py-2 px-2 text-xl shadow-text-white text-white ">
             <Link to="/">Home</Link>

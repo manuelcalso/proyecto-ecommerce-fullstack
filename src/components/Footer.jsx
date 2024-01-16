@@ -14,6 +14,7 @@ export default function Footer() {
         }
         alt="background img"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center "
+        loading="lazy"
       />
       <div
         className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
@@ -86,6 +87,7 @@ export default function Footer() {
                     "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
                   }
                   alt="gorillaz logo"
+                  loading="lazy"
                 />
               </a>
             </div>

@@ -24,6 +24,7 @@ export default function Herosection(props) {
                 className=" imagenlogo h-24 w-24 rounded-full"
                 src={props.imagenlogo}
                 alt=""
+                loading="lazy"
               />
             </a>
           </div>
@@ -68,7 +69,12 @@ export default function Herosection(props) {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img className="h-24 w-auto" src={props.imagenlogo} alt="" />
+                <img
+                  className="h-24 w-auto"
+                  src={props.imagenlogo}
+                  alt=""
+                  loading="lazy"
+                />
               </a>
               <button
                 type="button"

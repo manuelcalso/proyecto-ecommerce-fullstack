@@ -43,6 +43,7 @@ function ProductPage() {
           <img
             src={img[0]}
             className="h-120 w-80 border border-black rounded"
+            loading="lazy"
           />
         </div>
         <div className="text-2xl flex flex-col gap-y-5 my-2 px-6 py-2 bg-black rounded justify-center items-center border border-gray-500">

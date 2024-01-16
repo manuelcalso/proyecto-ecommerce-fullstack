@@ -87,6 +87,7 @@ export default function Cart() {
                                         src={e.img}
                                         alt="product-image"
                                         className="h-30 w-20"
+                                        loading="lazy"
                                       />
                                     </Link>
                                     <h3>

@@ -48,6 +48,7 @@ export default function Login() {
                 "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
               }
               alt="Plastilogo"
+              loading="lazy"
             />
           </a>
           <h2 className="mt-10 text-center text-2xl leading-9 tracking-tight text-white shadow-text font-brodies">

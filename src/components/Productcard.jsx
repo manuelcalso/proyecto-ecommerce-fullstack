@@ -12,6 +12,7 @@ const Productcard = ({ product }) => {
                 src={product.img[0]}
                 alt={product.name}
                 className="h-62 w-60"
+                loading="lazy"
               />
               <br />
               <span className="text-lg">{product.name}</span>
