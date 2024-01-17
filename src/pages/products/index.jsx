@@ -8,6 +8,7 @@ import profileimg from "../../assets/marco.png";
 export default function Mainproducts() {
   return (
     <>
+      {/*
       <div>
         <Header
           imagennegocio={
@@ -15,7 +16,7 @@ export default function Mainproducts() {
           }
           imagenprofile={profileimg}
         />
-      </div>
+      </div>*/}
       <div>
         <Catalog />
       </div>

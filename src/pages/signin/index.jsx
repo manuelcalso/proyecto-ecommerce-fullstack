@@ -7,8 +7,6 @@ import UserContext from "../../context/User/UserContext";
 import { useContext, useState } from "react";
 
 export default function Login() {
-  const notify = () => toast.success("Successfully Log In!");
-
   const userCtx = useContext(UserContext);
   const { loginUser } = userCtx;
 
@@ -26,7 +24,11 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    return loginUser(user);
+    if (loginUser(user)) {
+      toast.success("Successfully Log In!");
+    } else {
+      toast.error("Error al enviar el formulario");
+    }
   };
 
   return (
@@ -36,7 +38,9 @@ export default function Login() {
           "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
         }
         imagenprofile={profileimg}
-      />
+      >
+        {" "}
+      </Header>
 
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black bg-product ">
         <Toaster position="top-center" reverseOrder={false} />
@@ -51,6 +55,7 @@ export default function Login() {
               loading="lazy"
             />
           </a>
+
           <h2 className="mt-10 text-center text-2xl leading-9 tracking-tight text-white shadow-text font-brodies">
             Sign in to your account
           </h2>
@@ -121,7 +126,6 @@ export default function Login() {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5  leading-6 text-black hover:text-white  hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-brodies transition shadow-text-white"
-                onClick={notify}
               >
                 Sign in
               </button>

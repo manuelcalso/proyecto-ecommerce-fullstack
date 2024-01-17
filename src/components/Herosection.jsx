@@ -111,7 +111,7 @@ export default function Herosection(props) {
           </Dialog.Panel>
         </Dialog>
       </header>
-      <div className="relative isolate px-6 pt-2 lg:px-8">
+      <div className="relative isolate px-6 lg:px-8">
         <div className="video-background">
           <video autoPlay muted loop className="video">
             <source

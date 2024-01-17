@@ -33,14 +33,13 @@ function SignUp() {
 
   return (
     <>
-      <Header>
-        <Toaster position="top-center" reverseOrder={false} />
-      </Header>
+      <Header />
       <div className="flex flex-col justify-center items-center form-bg my-2">
         <form
           onSubmit={handleSubmit}
           className=" bg-black rounded text-white px-10 jello-horizontal shadow-text-white"
         >
+          <Toaster position="top-center" reverseOrder={false} />
           <div>
             <h1 className="flex flex-col  justify-center items-center text-3xl font-brodies my-5">
               Sign Up to PB

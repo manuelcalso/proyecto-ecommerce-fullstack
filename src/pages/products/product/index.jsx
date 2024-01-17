@@ -26,7 +26,6 @@ function ProductPage() {
   return (
     <>
       <Header />
-
       <div className=" flex flex-col justify-center items-center">
         <div className="video-background">
           <video autoPlay muted loop className="video">
@@ -141,7 +140,7 @@ function ProductPage() {
             ) : (
               <>
                 <div className="border border-white rounded px-2 py-2 my-2 bg-green-500 hover:bg-red-500 flex flex-row justify-center itmes-center">
-                  <Link to="/login">
+                  <Link to="/signup">
                     <button className="text-black text-2xl font-bold shadow-text">
                       Create your cart
                     </button>

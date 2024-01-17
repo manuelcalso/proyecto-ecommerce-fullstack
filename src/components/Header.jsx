@@ -52,7 +52,7 @@ function Header() {
 
   return (
     <>
-      <section className="theme-alt font-brodies w-full z-10">
+      <section className="theme-alt font-brodies w-full">
         <ul className="flex flex-row sm:flex-row justify-between items-center gap-x-2 mx-2">
           <img
             src={
@@ -81,7 +81,7 @@ function Header() {
                 >
                   <Link to="/">Log Out</Link>
                 </button>
-                <p className="flex flex-row ">
+                <p className="flex flex-row border border-white rounded px-1 py-1 ">
                   <button
                     to="/cart"
                     className="flex flex-row gap-x-2 shadow-text-white text-white"
