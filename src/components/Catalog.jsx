@@ -13,7 +13,7 @@ const Catalog = () => {
   return (
     <div className="relative navletter">
       <div className="video-background">
-        <video autoPlay muted loop className="video">
+        <video playsinline autoPlay muted loop className="video">
           <source
             src={
               "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674393/videos/smoke_bwz0nv.mp4"
