@@ -52,7 +52,7 @@ function Header() {
 
   return (
     <>
-      <section className=" theme-alt font-brodies">
+      <section className="theme-alt font-brodies w-full z-10">
         <ul className="flex flex-row sm:flex-row justify-between items-center gap-x-2 mx-2">
           <img
             src={
