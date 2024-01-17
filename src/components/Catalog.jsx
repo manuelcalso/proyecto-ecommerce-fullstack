@@ -16,7 +16,7 @@ const Catalog = () => {
         <video playsinline autoPlay muted loop className="video">
           <source
             src={
-              "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674393/videos/smoke_bwz0nv.mp4"
+              "https://res.cloudinary.com/dgzghl0ur/video/upload/v1700674480/videos/403670244_6898248946909846_5336635842586376788_n_p5y70b.mp4"
             }
             type="video/mp4"
           />
