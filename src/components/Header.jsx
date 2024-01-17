@@ -53,14 +53,15 @@ function Header() {
   return (
     <>
       <section className=" theme-alt font-brodies">
-        <ul className="flex flex-col sm:flex-row justify-between items-center gap-x-2 mx-2">
+        <ul className="flex flex-row sm:flex-row justify-between items-center gap-x-2 mx-2">
           <img
             src={
               "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
             }
-            className="rounded-full h-20 w-20 imagenlogo"
+            className="rounded-full h-16 w-16 imagenlogo hidden sm:inline-block"
             loading="lazy"
           />
+
           <li className="bg-black rounded py-2 px-2 text-xl shadow-text-white text-white ">
             <Link to="/">Home</Link>
           </li>
@@ -69,7 +70,7 @@ function Header() {
             <>
               <div className="flex flex-col sm:flex-row justify-end items-center gap-x-5 bg-black rounded py-2 px-2">
                 <p className="shadow-text-white text-white">
-                  Welcome {user.name} {user.lastname}
+                  Welcome {user.name}
                 </p>
                 <p className="bg-purple-900 rounded px-2 shadow-text text-white">
                   <Link to="/products">Products</Link>
@@ -91,11 +92,12 @@ function Header() {
                   </button>
                 </p>
               </div>
+
               <Toaster position="top-center" reverseOrder={false} />
             </>
           ) : (
             <>
-              <div className="flex flex-col sm:flex-row gap-x-10 font-brodies text-xl justify-center items-center h-20 w-auto mx-2 ">
+              <div className="flex flex-row sm:flex-row gap-x-10 font-brodies text-xl justify-center items-center h-20 w-auto mx-2 ">
                 <li>
                   <Link to="/signup" className="shadow-text">
                     Sign Up

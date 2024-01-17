@@ -45,7 +45,7 @@ export default function Login() {
             <img
               className=" mx-auto h-28 w-auto rounded flicker"
               src={
-                "https://res.cloudinary.com/dgzghl0ur/image/upload/v1705375915/products%20ecommerce/workana/beach_1_-_copia_eknxnl.png"
+                "https://res.cloudinary.com/dgzghl0ur/image/upload/v1700674111/products%20ecommerce/logos/nulogo3_waqxqh.png"
               }
               alt="Plastilogo"
               loading="lazy"
